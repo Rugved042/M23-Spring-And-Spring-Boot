@@ -9,7 +9,7 @@ public class Jio implements Sim
 
 	public void data() 
 	{
-		System.out.println("Data using Airtel sim");		
+		System.out.println("Data using Jio sim");		
 	}
 
 }
