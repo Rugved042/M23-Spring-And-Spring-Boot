@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+<!-- // 1. Dependency in terms of Literal -->
+<!-- For Di-Using setter method-->
+<!--
+<bean id = "s" class = "com.cg.di.Student">
+<property name="StudentName" value = "Rugved Naik"></property>
+<property name="rollNo" value = "101"></property>
+</bean>
+<bean id = "s1" class = "com.cg.di.Student">
+<property name="StudentName" value = "Akshay Jadhav"></property>
+<property name="rollNo" value = "102"></property>
+</bean>
+-->
+
+<!-- For DI-Using Constructor method-->
+<!--
+<bean id = "s" class = "com.cg.di.Student">
+<constructor-arg name="studentName" value = "Akshay Jadhav"></constructor-arg>
+<constructor-arg name="rollNo" value = "102"></constructor-arg>
+</bean>
+-->
+
+<!-- 2. Dependency in terms of Object -->
+<!-- For Di-Using setter method-->
+<bean id = "s" class = "com.cg.di_obj.StudentNew">
+<property name="math" >
+<bean class = "com.cg.di_obj.Mathcheat"/>
+</property>
+</bean>
+
+<!-- 2. Dependency in terms of Coleection -->
+
+</beans>
