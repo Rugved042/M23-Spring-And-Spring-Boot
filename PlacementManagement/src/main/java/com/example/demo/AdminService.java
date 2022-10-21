@@ -13,29 +13,29 @@ import org.springframework.stereotype.Service;
 public class AdminService 
 {
 	@Autowired
-	private AdminRepository admin_repo;
+	private AdminRepository adminrepo;
 	
 	// To retrieve all the data of admin class
 	public List<Admin> listAll()
 	{
-		return admin_repo.findAll();
+		return adminrepo.findAll();
 	}
 	
 	// insert/update a data
 	public void create(Admin a)
 	{
-		admin_repo.save(a);
+		adminrepo.save(a);
 	}
 	
 	// to retrieve a single record
-	public Admin retrieve(Integer admin_id)
+	public Admin retrieve(Integer adminid)
 	{
-		return admin_repo.findById(admin_id).get();			
+		return adminrepo.findById(adminid).get();			
 	}
 	
 	// to delete a data
-	public void delete(Integer admin_id)
+	public void delete(Integer adminid)
 	{
-		admin_repo.deleteById(admin_id);
+		adminrepo.deleteById(adminid);
 	}
 }

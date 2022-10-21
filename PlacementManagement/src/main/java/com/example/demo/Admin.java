@@ -1,60 +1,52 @@
 package com.example.demo;
 
 import javax.persistence.Entity;
-
 import javax.persistence.Id;
 
 @Entity
 public class Admin 
 {
 	@Id
-	private Integer admin_id;
-	private String admin_name;
-	private String admin_password;
+	private Integer adminid;
+	private String adminname;
+	private String adminpassword;
 	
-
-	//Default Constructor
+	public Admin(Integer adminid, String adminname, String adminpassword) {
+		super();
+		this.adminid = adminid;
+		this.adminname = adminname;
+		this.adminpassword = adminpassword;
+	}
+	
 	public Admin() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	// Parameterized Constructor 
-	public Admin(Integer admin_id, String admin_name, String admin_password) {
-		super();
-		this.admin_id = admin_id;
-		this.admin_name = admin_name;
-		this.admin_password = admin_password;
-	}
 
-	//getters and setters method
-	public Integer getId() {
-		return admin_id;
+	public Integer getAdminid() {
+		return adminid;
 	}
-
-	public void setId(Integer id) {
-		this.admin_id = id;
+	public void setAdminid(Integer adminid) {
+		this.adminid = adminid;
 	}
-
-	public String getAdmin_name() {
-		return admin_name;
+	public String getAdminname() {
+		return adminname;
 	}
-
-	public void setAdmin_name(String admin_name) {
-		this.admin_name = admin_name;
+	public void setAdminname(String adminname) {
+		this.adminname = adminname;
 	}
-
-	public String getAdmin_password() {
-		return admin_password;
+	public String getAdminpassword() {
+		return adminpassword;
 	}
-
-	public void setAdmin_password(String admin_password) {
-		this.admin_password = admin_password;
+	public void setAdminpassword(String adminpassword) {
+		this.adminpassword = adminpassword;
 	}
 	
-	// toString Method
 	@Override
 	public String toString() {
-		return "Admin [id=" + admin_id + ", admin_name=" + admin_name + ", admin_password=" + admin_password + "]";
+		return "Admin [adminid=" + adminid + ", adminname=" + adminname + ", adminpassword=" + adminpassword + "]";
 	}
+	
+
+	
 }

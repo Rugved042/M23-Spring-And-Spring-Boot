@@ -19,36 +19,36 @@ import org.springframework.web.bind.annotation.RestController;
 public class AdminController 
 {
 	@Autowired
-	private AdminService admin_service;
+	private AdminService adminservice;
 	
 	//creation
-	@PostMapping("/admin")
+	@PostMapping("/ad")
 	public void add(@RequestBody Admin a)
 	{
-		admin_service.create(a);
+		adminservice.create(a);
 	}
 	
 	// Deletion
-	@DeleteMapping("/admin/{admin_id}")
-	public void remove(@PathVariable Integer admin_id)
+	@DeleteMapping("/ad/{adminid}")
+	public void remove(@PathVariable Integer adminid)
 	{
-		admin_service.delete(admin_id);
+		adminservice.delete(adminid);
 	}
 	
 	//Retrieve All Data
-	@GetMapping("/admin")
+	@GetMapping("/ad")
 	public List<Admin> list()
 	{
-		return admin_service.listAll();	
+		return adminservice.listAll();	
 	}
 	
 	//Retrieve with specific id
-	@GetMapping("/admin/{admin_id}")
-	public ResponseEntity<Admin> get(@PathVariable Integer admin_id)
+	@GetMapping("/ad/{adminid}")
+	public ResponseEntity<Admin> get(@PathVariable Integer adminid)
 	{
 		try
 		{
-			Admin a = admin_service.retrieve(admin_id);
+			Admin a = adminservice.retrieve(adminid);
 			return new ResponseEntity<Admin>(a,HttpStatus.OK);	
 		}
 		catch(NoSuchElementException e)
@@ -58,14 +58,14 @@ public class AdminController
 	}
 	
 	// Update data for specific id
-	@PutMapping("/admin/{admin_id}")
-	public ResponseEntity<Admin> update(@RequestBody Admin a,@PathVariable Integer admin_id)
+	@PutMapping("/ad/{adminid}")
+	public ResponseEntity<Admin> update(@RequestBody Admin a,@PathVariable Integer adminid)
 	{
 		try
 		{
 			@SuppressWarnings("unused")
-			Admin a1 = admin_service.retrieve(admin_id);
-			admin_service.create(a);
+			Admin a1 = adminservice.retrieve(adminid);
+			adminservice.create(a);
 			return new ResponseEntity<Admin>(a,HttpStatus.OK);	
 		}
 		catch(NoSuchElementException e)
